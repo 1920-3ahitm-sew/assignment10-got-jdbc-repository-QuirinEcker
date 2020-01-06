@@ -50,7 +50,19 @@ public class Person {
         this.house = house;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Person) {
+            Person pobj = (Person) obj;
+            return
+                    pobj.city.equals(this.city) &&
+                    pobj.name.equals(this.name) &&
+                    pobj.house.equals(this.house)
+            ;
+        }
 
+        return false;
+    }
 
     @Override
     public String toString() {
